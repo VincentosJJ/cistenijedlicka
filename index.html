@@ -3,303 +3,211 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>cistenijedlicka.cz | Hloubkové čištění</title>
-<meta name="description" content="Profesionální hloubkové čištění koberců, sedaček a interiérů vozidel v Poděbradech a Kolíně. Moderní technologie, precizní práce a rychlá domluva.">
+<title>Jedlička – Čištění koberců a čalounění</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
+:root {
+    --primary: #2E6FB7;
+    --primary-light: #6EB6E6;
+    --primary-dark: #1F4E8C;
+    --bg-light: #f4f8fc;
+}
+
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #ffffff;
-    color: #111;
-    line-height: 1.6;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* HLAVIČKA */
-header {
-    position: relative;
-    background: linear-gradient(180deg, #0d47a1, #1976d2 50%, #ffffff 100%);
-    color: white;
-    padding: 100px 20px 80px 20px;
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(180deg, var(--primary-light), #ffffff);
+    color: #222;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* HERO */
+.hero {
     text-align: center;
-    overflow: hidden;
-}
-
-.logo {
-    max-width: 250px;
-    height: auto;
-    margin-bottom: 20px;
-    z-index: 1;
-    position: relative;
-}
-
-header p {
-    font-size: 18px;
-    max-width: 700px;
-    margin: auto;
-    z-index: 1;
-    position: relative;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 14px 28px;
-    background: white;
-    color: #0d47a1;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 6px;
-    z-index: 1;
-    position: relative;
-}
-
-/* BUBLINKY */
-.bubbles {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.bubbles span {
-    position: absolute;
-    bottom: -50px;
-    width: 20px;
-    height: 20px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 50%;
-    animation: rise 15s infinite;
-}
-
-.bubbles span:nth-child(1) { left: 10%; animation-duration: 12s; animation-delay: 0s; }
-.bubbles span:nth-child(2) { left: 30%; animation-duration: 18s; animation-delay: 3s; }
-.bubbles span:nth-child(3) { left: 50%; animation-duration: 14s; animation-delay: 5s; }
-.bubbles span:nth-child(4) { left: 70%; animation-duration: 16s; animation-delay: 2s; }
-.bubbles span:nth-child(5) { left: 90%; animation-duration: 20s; animation-delay: 1s; }
-
-@keyframes rise {
-    0% { transform: translateY(0) scale(1); opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { transform: translateY(-800px) scale(1.5); opacity: 0; }
-}
-
-/* SEKCE */
-section {
     padding: 60px 20px;
-    max-width: 1000px;
-    margin: auto;
-    position: relative;
-    z-index: 1;
 }
 
-h2 {
-    color: #0d47a1;
-    margin-bottom: 20px;
+.hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: #111;
+    letter-spacing: 1px;
 }
 
-.service-box {
-    margin-bottom: 30px;
+.hero h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--primary-dark);
+    margin-top: 10px;
 }
 
-.pricing {
-    background: #f5f9ff;
-    padding: 40px;
-    border-radius: 10px;
+.hero p {
+    margin-top: 25px;
+    font-size: 20px;
+    color: #fff;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* FORMULÁŘ */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.cta-btn {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 14px 35px;
+    background: white;
+    color: var(--primary-dark);
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
 }
 
-input, textarea {
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-
-button {
-    padding: 14px;
-    font-size: 16px;
-    background: #1976d2;
+.cta-btn:hover {
+    background: var(--primary-dark);
     color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
 }
 
-button:hover {
-    background: #0d47a1;
+/* SECTION */
+.section {
+    padding: 80px 20px;
+}
+
+.section h3 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: var(--primary-dark);
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h4 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: var(--primary);
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card ul li {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.price {
+    font-weight: 700;
+    color: var(--primary-dark);
 }
 
 /* FOOTER */
-footer {
-    background: #111;
-    color: white;
+.footer {
     text-align: center;
-    padding: 30px 20px;
-    margin-top: 50px;
-}
-
-/* PŘED / PO GALERIE */
-.slider {
-    position: relative;
-    max-width: 800px;
-    margin: 30px auto;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    display: flex;
-}
-
-.slide img {
-    width: 50%;
-    object-fit: cover;
-}
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(13,71,161,0.7);
+    padding: 40px 20px;
+    background: var(--primary-dark);
     color: white;
-    border: none;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.footer a {
+    color: var(--primary-light);
+    text-decoration: none;
+}
 
-/* GALERIE / CENÍK obrázky */
-.gallery img, .pricing img {
-    width: 100%;
-    max-width: 800px;
-    display: block;
-    margin: auto;
-    border-radius: 10px;
+@media(max-width:768px){
+    .hero h1 {
+        font-size: 34px;
+    }
 }
 </style>
 </head>
-
 <body>
 
-<header>
-  <img src="images/logo.png" alt="Jedlička – Hloubkové čištění" class="logo">
-  <p>Důkladné a precizní hloubkové čištění koberců, čalounění a interiérů vozidel v Poděbradech a Kolíně.</p>
-  <a class="btn" href="tel:737966100">📞 Zavolat nyní</a>
-  <div class="bubbles">
-    <span></span><span></span><span></span><span></span><span></span>
-  </div>
-</header>
-
-<section>
-<h2>Jak fungujeme</h2>
-<p>Každé čištění začíná důkladným suchým vysáváním. Následně používáme profesionální extrakční stroj Tineco iCarpet s kvalitními přípravky a kartáči, které odstraní i hluboko usazenou špínu, skvrny a zápach.</p>
-</section>
-
-<section>
-<h2>Služby</h2>
-
-<div class="service-box">
-<h3>🧼 Čištění koberců</h3>
-<p>Hloubkové čištění bez povrchního přejetí. Odstraníme skvrny, mastnotu i bakterie. Výsledkem je svěží a nadýchaný koberec.</p>
-</div>
-
-<div class="service-box">
-<h3>🛋️ Čištění čalounění a vozidel</h3>
-<p>Bezpečné odstranění prachu, potu, skvrn a pachů. Ideální pro domácnosti se zvířaty i alergiky.</p>
-</div>
-
-<div class="service-box">
-<h3>🏢 Čištění pro firmy</h3>
-<p>Pravidelné i jednorázové čištění kanceláří a komerčních prostor. Flexibilita a preciznost samozřejmostí.</p>
-</div>
-</section>
-
-<!-- GALERIE PŘED / PO -->
-<section>
-<h2>Galerie – Před / Po</h2>
-<div class="slider">
-  <div class="slides">
-    <div class="slide">
-      <img src="images/koberec_pred.jpg" alt="Před čištěním">
-      <img src="images/koberec_po.jpg" alt="Po čištění">
+<div class="hero">
+    <div class="container">
+        <h1>JEDLIČKA</h1>
+        <h2>ČIŠTĚNÍ KOBERCŮ A ČALOUNĚNÍ</h2>
+        <p>Důkladné a precizní hloubkové čištění koberců, čalounění a interiérů vozidel v Poděbradech a Kolíně.</p>
+        <a href="tel:+420737966100" class="cta-btn">Zavolat nyní</a>
     </div>
-    <div class="slide">
-      <img src="images/calouneni_pred.jpg" alt="Před čištěním">
-      <img src="images/calouneni_po.jpg" alt="Po čištění">
-    </div>
-    <div class="slide">
-      <img src="images/vozidlo_pred.jpg" alt="Před čištěním">
-      <img src="images/vozidlo_po.jpg" alt="Po čištění">
-    </div>
-  </div>
-  <button class="prev">◀</button>
-  <button class="next">▶</button>
 </div>
-</section>
 
-<!-- CENÍK -->
-<section class="pricing">
-<h2>Ceník</h2>
-<img src="images/cenik-canva.jpg" alt="Ceník služeb Jedlička">
-</section>
+<div class="section">
+    <div class="container">
+        <h3>Ceník služeb</h3>
+        <div class="grid">
 
-<section>
-<h2>Kontaktujte nás</h2>
+            <div class="card">
+                <h4>Čištění aut</h4>
+                <ul>
+                    <li>Interiér osobního auta – <span class="price">1 800 Kč</span></li>
+                    <li>Větší SUV / kombi – <span class="price">2 200 Kč</span></li>
+                    <li>Silně znečištěné – dle domluvy</li>
+                </ul>
+            </div>
 
-<form action="https://formspree.io/f/meelrnke" method="POST">
-<input type="text" name="name" placeholder="Vaše jméno" required>
-<input type="email" name="email" placeholder="Váš email" required>
-<textarea name="message" rows="5" placeholder="Popište co potřebujete vyčistit..." required></textarea>
-<button type="submit">Odeslat poptávku</button>
-</form>
+            <div class="card">
+                <h4>Čištění sedaček</h4>
+                <ul>
+                    <li>2–3 místná sedačka – <span class="price">1 500 Kč</span></li>
+                    <li>Rohová sedačka – <span class="price">2 000 Kč</span></li>
+                    <li>Křeslo – <span class="price">500 Kč</span></li>
+                    <li>Židle – <span class="price">300 Kč</span></li>
+                </ul>
+            </div>
 
-<p style="margin-top:20px;">
-📞 737 966 100<br>
-✉️ cisteni.jedlicka@gmail.com
-</p>
+            <div class="card">
+                <h4>Čištění koberců</h4>
+                <ul>
+                    <li>70 Kč / m²</li>
+                    <li>Minimální cena zakázky – <span class="price">1 200 Kč</span></li>
+                </ul>
+            </div>
 
-</section>
+        </div>
+    </div>
+</div>
 
-<footer>
-© 2026 cistenijedlicka.cz | Poděbrady & Kolín
-</footer>
-
-<script>
-const slides = document.querySelector('.slides');
-const slideCount = document.querySelectorAll('.slide').length;
-let currentIndex = 0;
-
-document.querySelector('.next').addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % slideCount;
-    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-});
-
-document.querySelector('.prev').addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-});
-</script>
+<div class="footer">
+    <p><strong>Vincent Jan Jedlička</strong></p>
+    <p>Telefon: <a href="tel:+420737966100">(+420) 737 966 100</a></p>
+    <p>Email: <a href="mailto:cisteni.jedlicka@gmail.com">cisteni.jedlicka@gmail.com</a></p>
+    <p>cistenijedlicka.cz</p>
+</div>
 
 </body>
 </html>
