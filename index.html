@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>cistenijedlicka.cz | Hloubkové čištění</title>
-<meta name="description" content="Profesionální hloubkové čištění koberců, sedaček a interiérů vozidel v Poděbradech a Kolíně.">
 
-<!-- GOOGLE FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -15,245 +13,217 @@
 --primary:#2E6FB7;
 --primary-dark:#1F4E8C;
 --primary-light:#6EB6E6;
+--bubble:#8FD3FF;
 --black:#111;
 }
 
-body {
-margin: 0;
-font-family: 'Montserrat', sans-serif;
-background: #ffffff;
-color: #111;
-line-height: 1.6;
+body{
+margin:0;
+font-family:'Montserrat',sans-serif;
+color:#111;
+line-height:1.5;
 }
 
-/* ===== HLAVIČKA ===== */
+/* ===== HEADER ===== */
 
-header {
-position: relative;
-background: linear-gradient(180deg, var(--primary-dark), var(--primary) 50%, #ffffff 100%);
-color: white;
-padding: 120px 20px 100px 20px;
-text-align: center;
-overflow: hidden;
-border-bottom: 3px solid black;
+header{
+position:relative;
+background:linear-gradient(180deg,var(--primary-dark),var(--primary) 60%,#ffffff 100%);
+color:white;
+padding:100px 20px 70px;
+text-align:center;
+overflow:hidden;
 }
 
-/* LOGO BOX */
-.logo-box{
-position: relative;
+.logo{
+max-width:220px;
+margin-bottom:20px;
+}
+
+header p{
+max-width:700px;
+margin:10px auto 20px;
+font-size:18px;
+}
+
+.btn{
 display:inline-block;
-padding:20px 40px;
-border:3px solid black;
-background:white;
-margin-bottom:30px;
-}
-
-.logo {
-max-width: 220px;
-height: auto;
-display:block;
-}
-
-/* ČERNÉ DEKORATIVNÍ LINKY */
-.corner-lines::before,
-.corner-lines::after{
-content:"";
-position:absolute;
-width:80px;
-height:80px;
-border:3px solid black;
-}
-
-.corner-lines::before{
-top:20px;
-left:20px;
-border-right:none;
-border-bottom:none;
-}
-
-.corner-lines::after{
-bottom:20px;
-right:20px;
-border-left:none;
-border-top:none;
-}
-
-header p {
-font-size: 18px;
-max-width: 700px;
-margin: auto;
-}
-
-.btn {
-display: inline-block;
-margin-top: 25px;
-padding: 14px 32px;
-background: white;
-color: var(--primary-dark);
-font-weight: 600;
-text-decoration: none;
-border-radius: 6px;
-border:2px solid black;
+padding:14px 30px;
+background:var(--primary-dark);
+color:white;
+text-decoration:none;
+font-weight:600;
+border-radius:6px;
 transition:0.3s;
 }
 
-.btn:hover {
-background: black;
-color: white;
+.btn:hover{
+background:var(--primary-light);
+color:#111;
 }
 
 /* ===== BUBLINY ===== */
 
-.bubbles {
-position: absolute;
-width: 100%;
-height: 100%;
-top: 0;
-left: 0;
-overflow: hidden;
-pointer-events: none;
+.bubbles span{
+position:absolute;
+bottom:-60px;
+width:25px;
+height:25px;
+background:rgba(255,255,255,0.25);
+border-radius:50%;
+animation:rise 20s infinite;
 }
 
-.bubbles span {
-position: absolute;
-bottom: -60px;
-width: 25px;
-height: 25px;
-background: rgba(255,255,255,0.25);
-border-radius: 50%;
-animation: rise 18s infinite;
+.bubbles span:nth-child(1){left:5%;animation-duration:15s;}
+.bubbles span:nth-child(2){left:20%;animation-duration:18s;}
+.bubbles span:nth-child(3){left:40%;animation-duration:22s;}
+.bubbles span:nth-child(4){left:60%;animation-duration:17s;}
+.bubbles span:nth-child(5){left:80%;animation-duration:20s;}
+.bubbles span:nth-child(6){left:90%;animation-duration:25s;}
+.bubbles span:nth-child(7){left:30%;animation-duration:19s;}
+.bubbles span:nth-child(8){left:70%;animation-duration:23s;}
+
+@keyframes rise{
+0%{transform:translateY(0) scale(1);opacity:0.5;}
+50%{opacity:1;}
+100%{transform:translateY(-900px) scale(1.6);opacity:0;}
 }
 
-.bubbles span:nth-child(1) { left: 10%; animation-duration: 15s; }
-.bubbles span:nth-child(2) { left: 30%; animation-duration: 20s; }
-.bubbles span:nth-child(3) { left: 50%; animation-duration: 18s; }
-.bubbles span:nth-child(4) { left: 70%; animation-duration: 22s; }
-.bubbles span:nth-child(5) { left: 90%; animation-duration: 16s; }
+/* ===== SECTIONS ===== */
 
-@keyframes rise {
-0% { transform: translateY(0) scale(1); opacity: 0.5; }
-50% { opacity: 1; }
-100% { transform: translateY(-900px) scale(1.6); opacity: 0; }
+section{
+padding:50px 20px;
+max-width:1000px;
+margin:auto;
 }
 
-/* ===== SEKCE ===== */
-
-section {
-padding: 80px 20px;
-max-width: 1000px;
-margin: auto;
-}
-
-h2 {
-font-family: 'Poppins', sans-serif;
-font-size: 34px;
-color: var(--primary-dark);
-margin-bottom: 30px;
-position:relative;
-display:inline-block;
-}
-
-h2::after{
-content:"";
-display:block;
-height:3px;
-width:60%;
-background:black;
-margin-top:10px;
+h2{
+font-family:'Poppins',sans-serif;
+font-size:30px;
+color:black;
+margin-bottom:20px;
 }
 
 /* ===== SLUŽBY ===== */
 
-.service-box {
-margin-bottom: 40px;
-padding-left:20px;
-border-left:4px solid black;
+.service-box{
+margin-bottom:25px;
+padding-left:15px;
+border-left:4px solid var(--primary);
 }
 
 /* ===== GALERIE ===== */
 
-.slider {
-position: relative;
-max-width: 800px;
-margin: 40px auto;
-overflow: hidden;
-border:3px solid black;
+.slider{
+position:relative;
+max-width:850px;
+margin:30px auto;
+overflow:hidden;
+border:2px solid var(--primary-dark);
 }
 
-.slides {
-display: flex;
-transition: transform 0.5s ease-in-out;
+.slides{
+display:flex;
+transition:transform 0.5s ease-in-out;
 }
 
-.slide {
-min-width: 100%;
-display: flex;
+.slide{
+min-width:100%;
+display:flex;
 }
 
-.slide img {
-width: 50%;
-object-fit: cover;
+.slide img{
+width:50%;
+object-fit:cover;
 }
 
-.prev, .next {
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-background: black;
-color: white;
-border: none;
-font-size: 22px;
-padding: 10px;
-cursor: pointer;
+.prev,.next{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:var(--primary-dark);
+color:white;
+border:none;
+font-size:22px;
+padding:10px;
+cursor:pointer;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev{left:10px;}
+.next{right:10px;}
+
+.prev:hover,.next:hover{
+background:var(--primary-light);
+color:#111;
+}
+
+/* ===== CTA SEKCE ===== */
+
+.cta-section{
+background:linear-gradient(90deg,var(--primary-light),var(--primary));
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+.cta-section h2{
+color:white;
+margin-bottom:20px;
+}
+
+.cta-section .btn{
+background:var(--primary-dark);
+}
+
+.cta-section .btn:hover{
+background:white;
+color:var(--primary-dark);
+}
 
 /* ===== CENÍK ===== */
 
-.pricing {
-background: #f5f9ff;
-padding: 50px;
-border:3px solid black;
+.pricing{
+background:#f0f7ff;
+padding:40px;
+border:2px solid var(--primary-dark);
 }
 
 /* ===== FORM ===== */
 
-form {
-display: flex;
-flex-direction: column;
-gap: 15px;
+form{
+display:flex;
+flex-direction:column;
+gap:12px;
 }
 
-input, textarea {
-padding: 14px;
-font-size: 16px;
-border:2px solid black;
+input,textarea{
+padding:12px;
+border:1px solid #ccc;
+border-radius:4px;
 }
 
-button {
-padding: 14px;
-font-size: 16px;
-background: black;
-color: white;
-border: none;
-cursor: pointer;
+button{
+padding:14px;
+background:var(--primary-dark);
+color:white;
+border:none;
+cursor:pointer;
+transition:0.3s;
 }
 
-button:hover {
-background: var(--primary-dark);
+button:hover{
+background:var(--primary-light);
+color:#111;
 }
 
 /* ===== FOOTER ===== */
 
-footer {
-background: black;
-color: white;
-text-align: center;
-padding: 40px 20px;
-margin-top: 60px;
-font-size:14px;
+footer{
+background:var(--primary-light);
+color:#111;
+text-align:center;
+padding:40px 20px;
+margin-top:40px;
 }
 
 </style>
@@ -261,25 +231,24 @@ font-size:14px;
 
 <body>
 
-<header class="corner-lines">
+<header>
 
-<div class="logo-box">
-<img src="images/logo.png" alt="Jedlička – Hloubkové čištění" class="logo">
-</div>
+<img src="images/logo.png" class="logo" alt="Jedlička čištění">
 
 <p>Důkladné a precizní hloubkové čištění koberců, čalounění a interiérů vozidel v Poděbradech a Kolíně.</p>
 
 <a class="btn" href="tel:737966100">📞 Zavolat nyní</a>
 
 <div class="bubbles">
-<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span>
 </div>
 
 </header>
 
 <section>
 <h2>Jak fungujeme</h2>
-<p>Každé čištění začíná důkladným suchým vysáváním. Následně používáme profesionální extrakční technologii, která odstraní hluboko usazenou špínu, skvrny i zápach.</p>
+<p>Každé čištění začíná důkladným suchým vysáváním a pokračuje profesionální extrakční metodou, která odstraní hluboké nečistoty i zápach.</p>
 </section>
 
 <section>
@@ -287,17 +256,17 @@ font-size:14px;
 
 <div class="service-box">
 <h3>Čištění koberců</h3>
-<p>Hloubkové čištění bez povrchního přejetí.</p>
+<p>Hloubkové odstranění skvrn a bakterií.</p>
 </div>
 
 <div class="service-box">
-<h3>Čištění čalounění a vozidel</h3>
-<p>Bezpečné odstranění prachu, skvrn a pachů.</p>
+<h3>Čištění čalounění</h3>
+<p>Bezpečné čištění sedaček a matrací.</p>
 </div>
 
 <div class="service-box">
-<h3>Čištění pro firmy</h3>
-<p>Pravidelné i jednorázové čištění kanceláří.</p>
+<h3>Čištění vozidel</h3>
+<p>Kompletní vyčištění interiéru auta.</p>
 </div>
 
 </section>
@@ -309,13 +278,18 @@ font-size:14px;
 <div class="slides">
 
 <div class="slide">
-<img src="images/koberec_pred.jpg">
-<img src="images/koberec_po.jpg">
+<img src="images/1.jpg">
+<img src="images/2.jpg">
 </div>
 
 <div class="slide">
-<img src="images/calouneni_pred.jpg">
-<img src="images/calouneni_po.jpg">
+<img src="images/3.jpg">
+<img src="images/4.jpg">
+</div>
+
+<div class="slide">
+<img src="images/5.jpg">
+<img src="images/6.jpg">
 </div>
 
 </div>
@@ -326,9 +300,15 @@ font-size:14px;
 
 </section>
 
+<section class="cta-section">
+<h2>Chcete mít čistý a svěží domov?</h2>
+<p>Ozvěte se ještě dnes a domluvíme termín.</p>
+<a href="tel:737966100" class="btn">Nezávazně poptat čištění</a>
+</section>
+
 <section class="pricing">
 <h2>Ceník</h2>
-<img src="images/cenik-canva.jpg" style="width:100%; border:2px solid black;">
+<img src="images/cenik-canva.jpg" style="width:100%;">
 </section>
 
 <section>
@@ -341,11 +321,6 @@ font-size:14px;
 <button type="submit">Odeslat poptávku</button>
 </form>
 
-<p style="margin-top:20px;">
-📞 737 966 100<br>
-✉️ cisteni.jedlicka@gmail.com
-</p>
-
 </section>
 
 <footer>
@@ -353,18 +328,18 @@ font-size:14px;
 </footer>
 
 <script>
-const slides = document.querySelector('.slides');
-const slideCount = document.querySelectorAll('.slide').length;
-let currentIndex = 0;
+const slides=document.querySelector('.slides');
+const slideCount=document.querySelectorAll('.slide').length;
+let currentIndex=0;
 
-document.querySelector('.next').addEventListener('click', () => {
-currentIndex = (currentIndex + 1) % slideCount;
-slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+document.querySelector('.next').addEventListener('click',()=>{
+currentIndex=(currentIndex+1)%slideCount;
+slides.style.transform=`translateX(-${currentIndex*100}%)`;
 });
 
-document.querySelector('.prev').addEventListener('click', () => {
-currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+document.querySelector('.prev').addEventListener('click',()=>{
+currentIndex=(currentIndex-1+slideCount)%slideCount;
+slides.style.transform=`translateX(-${currentIndex*100}%)`;
 });
 </script>
 
