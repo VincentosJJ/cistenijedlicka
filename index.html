@@ -1,9 +1,18 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cistenijedlicka.cz | Hloubkové čištění</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+
 :root{
 --primary:#2E6FB7;
 --primary-dark:#1F4E8C;
 --primary-light:#6EB6E6;
---black:#111;
 }
 
 body{
@@ -11,10 +20,9 @@ margin:0;
 font-family:'Montserrat',sans-serif;
 color:#111;
 line-height:1.6;
-background:#fff;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 
 header{
 position:relative;
@@ -23,24 +31,22 @@ color:white;
 padding:140px 20px 100px;
 text-align:center;
 overflow:hidden;
-z-index:1;
 }
 
-header *{
+header .content{
 position:relative;
 z-index:2;
 }
 
 .logo{
-max-width:240px;
-margin-bottom:25px;
+max-width:230px;
+margin-bottom:20px;
 }
 
 header p{
 max-width:750px;
 margin:15px auto 25px;
 font-size:20px;
-font-weight:500;
 }
 
 .btn{
@@ -52,7 +58,6 @@ text-decoration:none;
 font-weight:600;
 border-radius:8px;
 transition:0.3s;
-box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 
 .btn:hover{
@@ -60,7 +65,7 @@ background:white;
 color:var(--primary-dark);
 }
 
-/* ===== BUBLINY (jen pozadí) ===== */
+/* BUBLINY */
 
 .bubbles{
 position:absolute;
@@ -82,13 +87,18 @@ border-radius:50%;
 animation:rise 20s infinite;
 }
 
+.bubbles span:nth-child(1){left:10%;animation-duration:16s;}
+.bubbles span:nth-child(2){left:25%;animation-duration:20s;}
+.bubbles span:nth-child(3){left:45%;animation-duration:22s;}
+.bubbles span:nth-child(4){left:65%;animation-duration:18s;}
+.bubbles span:nth-child(5){left:85%;animation-duration:24s;}
+
 @keyframes rise{
-0%{transform:translateY(0) scale(1);opacity:0.4;}
-50%{opacity:0.8;}
-100%{transform:translateY(-1000px) scale(1.6);opacity:0;}
+0%{transform:translateY(0);opacity:0.4;}
+100%{transform:translateY(-1000px);opacity:0;}
 }
 
-/* ===== SECTIONS ===== */
+/* SECTIONS */
 
 section{
 padding:80px 20px;
@@ -103,7 +113,7 @@ margin-bottom:30px;
 text-align:center;
 }
 
-/* ===== SLUŽBY ===== */
+/* SLUŽBY */
 
 .services-wrapper{
 display:grid;
@@ -114,12 +124,7 @@ gap:30px;
 padding:25px;
 border-radius:12px;
 background:white;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.service-box:hover{
-transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 .service-box h3{
@@ -127,7 +132,7 @@ margin-top:0;
 color:var(--primary-dark);
 }
 
-/* ===== GALERIE ===== */
+/* GALERIE */
 
 .slider{
 position:relative;
@@ -135,7 +140,6 @@ max-width:1000px;
 margin:40px auto;
 overflow:hidden;
 border-radius:12px;
-box-shadow:0 15px 40px rgba(0,0,0,0.15);
 }
 
 .slides{
@@ -169,7 +173,7 @@ border-radius:50%;
 .prev{left:15px;}
 .next{right:15px;}
 
-/* ===== CTA ===== */
+/* CTA */
 
 .cta-section{
 background:linear-gradient(90deg,var(--primary-light),var(--primary));
@@ -182,7 +186,7 @@ padding:90px 20px;
 color:white;
 }
 
-/* ===== CENÍK ===== */
+/* CENÍK */
 
 .pricing{
 background:#f0f7ff;
@@ -190,7 +194,7 @@ padding:60px;
 border-radius:12px;
 }
 
-/* ===== FORM ===== */
+/* FORM */
 
 form{
 max-width:600px;
@@ -204,7 +208,6 @@ input,textarea{
 padding:14px;
 border:1px solid #ddd;
 border-radius:6px;
-font-size:15px;
 }
 
 button{
@@ -214,7 +217,6 @@ color:white;
 border:none;
 border-radius:8px;
 cursor:pointer;
-font-weight:600;
 }
 
 button:hover{
@@ -222,7 +224,7 @@ background:var(--primary-light);
 color:#111;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 
 footer{
 background:var(--primary-light);
@@ -231,22 +233,126 @@ padding:50px 20px;
 margin-top:60px;
 }
 
-/* ===== DESKTOP ÚPRAVA ===== */
+/* DESKTOP */
 
 @media (min-width:900px){
-
 .services-wrapper{
 grid-template-columns:repeat(3,1fr);
 }
-
-header{
-padding:180px 20px 130px;
 }
 
-header p{
-font-size:22px;
-}
-
-}
-  
 </style>
+</head>
+
+<body>
+
+<header>
+
+<div class="bubbles">
+<span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<div class="content">
+<img src="images/logo.png" class="logo" alt="Jedlička čištění">
+<p>JEDLIČKA – profesionální hloubkové čištění bez kompromisů.</p>
+<a class="btn" href="tel:737966100">📞 Zavolat nyní</a>
+</div>
+
+</header>
+
+<section>
+<h2>Jak probíhá čištění</h2>
+<p>Každé čištění začíná důkladným suchým vysáváním. Poté aplikujeme profesionální čisticí prostředek, uvolníme nečistoty rotačními kartáči a pomocí extrakční technologie je důkladně odsajeme.</p>
+</section>
+
+<section>
+<h2>Služby</h2>
+
+<div class="services-wrapper">
+
+<div class="service-box">
+<h3>Čištění koberců</h3>
+<p>Koberce čistíme profesionálně a do hloubky. Odstraňujeme skvrny, mastnotu i bakterie.</p>
+</div>
+
+<div class="service-box">
+<h3>Čištění čalounění</h3>
+<p>Profesionální čištění sedaček, pohovek, křesel i matrací.</p>
+</div>
+
+<div class="service-box">
+<h3>Čištění vozidel</h3>
+<p>Důkladné čištění sedaček a čalounění v automobilu.</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>Galerie – Před / Po</h2>
+
+<div class="slider">
+<div class="slides">
+
+<div class="slide">
+<img src="images/1.jpg">
+<img src="images/2.jpg">
+</div>
+
+<div class="slide">
+<img src="images/3.jpg">
+<img src="images/4.jpg">
+</div>
+
+</div>
+
+<button class="prev">◀</button>
+<button class="next">▶</button>
+</div>
+
+</section>
+
+<section class="cta-section">
+<h2>Dopřejte svému domovu skutečnou čistotu.</h2>
+<a href="tel:737966100" class="btn">Nezávazně poptat čištění</a>
+</section>
+
+<section class="pricing">
+<h2>Ceník</h2>
+<img src="images/cenik-canva.jpg" style="width:100%;">
+</section>
+
+<section>
+<h2>Kontakt</h2>
+
+<form action="https://formspree.io/f/meelrnke" method="POST">
+<input type="text" name="name" placeholder="Vaše jméno" required>
+<input type="email" name="email" placeholder="Váš email" required>
+<textarea name="message" rows="5" placeholder="Popište co potřebujete vyčistit..." required></textarea>
+<button type="submit">Odeslat poptávku</button>
+</form>
+
+</section>
+
+<footer>
+© 2026 cistenijedlicka.cz | Poděbrady & Kolín
+</footer>
+
+<script>
+const slides=document.querySelector('.slides');
+const slideCount=document.querySelectorAll('.slide').length;
+let currentIndex=0;
+
+document.querySelector('.next').addEventListener('click',()=>{
+currentIndex=(currentIndex+1)%slideCount;
+slides.style.transform=`translateX(-${currentIndex*100}%)`;
+});
+
+document.querySelector('.prev').addEventListener('click',()=>{
+currentIndex=(currentIndex-1+slideCount)%slideCount;
+slides.style.transform=`translateX(-${currentIndex*100}%)`;
+});
+</script>
+
+</body>
+</html>
