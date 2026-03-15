@@ -28,7 +28,7 @@ header{
 position:relative;
 background:linear-gradient(180deg,var(--primary-dark),var(--primary) 60%,#ffffff 100%);
 color:white;
-padding:70px 15px 60px;
+padding:40px 15px 30px;
 text-align:center;
 overflow:hidden;
 }
@@ -39,9 +39,9 @@ z-index:2;
 
 .logo{
 width:95%;
-max-width:520px;
+max-width:800px;
 height:auto;
-margin-bottom:20px;
+margin-bottom:5px;
 }
 
 header p{
@@ -81,11 +81,46 @@ pointer-events:none;
 .bubbles span{
 position:absolute;
 bottom:-60px;
+border-radius:50%;
+background:rgba(255,255,255,0.35);
+animation:rise 20s infinite;
+}
+
+/* různé velikosti bublin */
+
+.bubbles span:nth-child(1){
+left:10%;
+width:20px;
+height:20px;
+animation-duration:14s;
+}
+
+.bubbles span:nth-child(2){
+left:25%;
+width:35px;
+height:35px;
+animation-duration:18s;
+}
+
+.bubbles span:nth-child(3){
+left:45%;
+width:18px;
+height:18px;
+animation-duration:16s;
+}
+
+.bubbles span:nth-child(4){
+left:65%;
+width:40px;
+height:40px;
+animation-duration:22s;
+}
+
+.bubbles span:nth-child(5){
+left:85%;
 width:25px;
 height:25px;
-background:rgba(255,255,255,0.15);
-border-radius:50%;
-animation:rise 20s infinite;
+animation-duration:20s;
 }
 
 .bubbles span:nth-child(1){left:10%;animation-duration:16s;}
@@ -309,7 +344,7 @@ Interiér vašeho vozu bude působit svěže a téměř jako nový.
 </div>
 <section>
 <h2>Proč si vybrat nás</h2>
-<p>
+<p style="text-align:center; max-width:800px; margin:auto;">
 Zakládáme si na profesionálním přístupu, pečlivosti a spolehlivosti.
 Každou zakázku řešíme individuálně podle typu materiálu a míry znečištění.
 Používáme kvalitní a šetrné prostředky, které jsou bezpečné pro domácnosti
