@@ -15,11 +15,42 @@
 --primary-light:#6EB6E6;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
+padding-top:60px;
 font-family:'Montserrat',sans-serif;
 color:#111;
 line-height:1.6;
+}
+
+/* MENU */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:rgba(255,255,255,0.95);
+display:flex;
+justify-content:center;
+gap:20px;
+padding:12px;
+z-index:999;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar a{
+text-decoration:none;
+color:#111;
+font-weight:600;
+}
+
+.navbar a:hover{
+color:var(--primary);
 }
 
 /* HEADER */
@@ -28,10 +59,11 @@ header{
 position:relative;
 background:linear-gradient(180deg,var(--primary-dark),var(--primary) 60%,#ffffff 100%);
 color:white;
-padding:40px 15px 30px;
+padding:25px 15px 20px;
 text-align:center;
 overflow:hidden;
 }
+
 header .content{
 position:relative;
 z-index:2;
@@ -40,7 +72,6 @@ z-index:2;
 .logo{
 width:95%;
 max-width:800px;
-height:auto;
 margin-bottom:5px;
 }
 
@@ -75,7 +106,6 @@ left:0;
 width:100%;
 height:100%;
 z-index:1;
-pointer-events:none;
 }
 
 .bubbles span{
@@ -86,48 +116,11 @@ background:rgba(255,255,255,0.35);
 animation:rise 20s infinite;
 }
 
-/* různé velikosti bublin */
-
-.bubbles span:nth-child(1){
-left:10%;
-width:20px;
-height:20px;
-animation-duration:14s;
-}
-
-.bubbles span:nth-child(2){
-left:25%;
-width:35px;
-height:35px;
-animation-duration:18s;
-}
-
-.bubbles span:nth-child(3){
-left:45%;
-width:18px;
-height:18px;
-animation-duration:16s;
-}
-
-.bubbles span:nth-child(4){
-left:65%;
-width:40px;
-height:40px;
-animation-duration:22s;
-}
-
-.bubbles span:nth-child(5){
-left:85%;
-width:25px;
-height:25px;
-animation-duration:20s;
-}
-
-.bubbles span:nth-child(1){left:10%;animation-duration:16s;}
-.bubbles span:nth-child(2){left:25%;animation-duration:20s;}
-.bubbles span:nth-child(3){left:45%;animation-duration:22s;}
-.bubbles span:nth-child(4){left:65%;animation-duration:18s;}
-.bubbles span:nth-child(5){left:85%;animation-duration:24s;}
+.bubbles span:nth-child(1){left:10%;width:20px;height:20px;}
+.bubbles span:nth-child(2){left:25%;width:35px;height:35px;}
+.bubbles span:nth-child(3){left:45%;width:18px;height:18px;}
+.bubbles span:nth-child(4){left:65%;width:40px;height:40px;}
+.bubbles span:nth-child(5){left:85%;width:25px;height:25px;}
 
 @keyframes rise{
 0%{transform:translateY(0);opacity:0.4;}
@@ -164,7 +157,6 @@ box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 .service-box h3{
-margin-top:0;
 color:var(--primary-dark);
 }
 
@@ -200,7 +192,6 @@ transform:translateY(-50%);
 background:var(--primary-dark);
 color:white;
 border:none;
-font-size:22px;
 padding:12px;
 cursor:pointer;
 border-radius:50%;
@@ -216,10 +207,6 @@ background:linear-gradient(90deg,var(--primary-light),var(--primary));
 color:white;
 text-align:center;
 padding:90px 20px;
-}
-
-.cta-section h2{
-color:white;
 }
 
 /* CENÍK */
@@ -255,11 +242,6 @@ border-radius:8px;
 cursor:pointer;
 }
 
-button:hover{
-background:var(--primary-light);
-color:#111;
-}
-
 /* FOOTER */
 
 footer{
@@ -282,6 +264,13 @@ grid-template-columns:repeat(3,1fr);
 
 <body>
 
+<div class="navbar">
+<a href="#sluzby">Služby</a>
+<a href="#omne">O mně</a>
+<a href="#cenik">Ceník</a>
+<a href="#kontakt">Kontakt</a>
+</div>
+
 <header>
 
 <div class="bubbles">
@@ -289,13 +278,8 @@ grid-template-columns:repeat(3,1fr);
 </div>
 
 <div class="content">
-<img src="images/logo.png" class="logo" alt="Jedlička čištění">
-<p>
-JEDLIČKA – profesionální hloubkové čištění koberců, sedaček a interiérů vozidel.
-Používáme moderní extrakční technologii, která odstraní hluboko usazené nečistoty,
-alergeny i bakterie. Vracíme vašemu domovu i automobilu svěžest, hygienu a nový vzhled
-bez poškození materiálů.
-</p>
+<img src="images/logo.png" class="logo">
+<p>JEDLIČKA – profesionální hloubkové čištění koberců, sedaček a interiérů vozidel.</p>
 <a class="btn" href="tel:737966100">📞 Zavolat nyní</a>
 </div>
 
@@ -303,70 +287,47 @@ bez poškození materiálů.
 
 <section>
 <h2>Jak probíhá čištění</h2>
-<p>
-Každé čištění začíná důkladným suchým vysáváním, které odstraní prach a volné nečistoty.
-Následně aplikujeme profesionální čisticí prostředek přizpůsobený konkrétnímu typu materiálu.
-Pomocí rotačních kartáčů uvolníme hluboko usazené nečistoty a mastnotu.
-Nakonec vše důkladně odsajeme extrakční metodou, která odstraní zbytky čisticího prostředku
-i rozpuštěné nečistoty. Výsledkem je hygienicky čistý, svěží a rychle schnoucí povrch.
+<p style="text-align:center;max-width:800px;margin:auto;">
+Důkladné vysátí, aplikace čisticího prostředku, rozrušení nečistot kartáči a následná extrakce.
+Výsledkem je hluboce čistý, svěží a hygienický povrch.
 </p>
 </section>
 
-<section>
+<section id="sluzby">
 <h2>Služby</h2>
 
 <div class="services-wrapper">
 
 <div class="service-box">
 <h3>Čištění koberců</h3>
-<p>
-Koberce čistíme profesionálně a do hloubky. Odstraňujeme skvrny, mastnotu i bakterie.
-Obnovujeme barvu vláken a prodlužujeme životnost koberců v domácnostech i firmách.
-</p>
+<p>Odstraňujeme skvrny, bakterie i pachy a vracíme kobercům svěžest.</p>
 </div>
 
 <div class="service-box">
 <h3>Čištění čalounění</h3>
-<p>
-Provádíme hloubkové čištění sedaček, pohovek, křesel i matrací.
-Odstraňujeme skvrny od jídla, nápojů i domácích mazlíčků.
-Vaše čalounění bude nejen vizuálně čisté, ale i hygienicky ošetřené.
-</p>
+<p>Profesionální čištění sedaček, pohovek i matrací.</p>
 </div>
 
 <div class="service-box">
 <h3>Čištění vozidel</h3>
-<p>
-Důkladně čistíme sedačky, čalounění i koberečky v automobilech.
-Odstraňujeme zápach, skvrny i zašlou špínu z běžného používání.
-Interiér vašeho vozu bude působit svěže a téměř jako nový.
-</p>
+<p>Důkladné čištění interiéru vozidla od prachu i zápachu.</p>
 </div>
-<section>
-<h2>Proč si vybrat nás</h2>
-<p style="text-align:center; max-width:800px; margin:auto;">
-Zakládáme si na profesionálním přístupu, pečlivosti a spolehlivosti.
-Každou zakázku řešíme individuálně podle typu materiálu a míry znečištění.
-Používáme kvalitní a šetrné prostředky, které jsou bezpečné pro domácnosti
-s dětmi i domácími mazlíčky.
-Naším cílem není jen vyčistit povrch, ale vrátit mu svěžest a dlouhodobou čistotu.
-</p>
-</section>  
-<section>
+
+</div>
+</section>
+
+<section id="omne">
 <h2>O mně</h2>
-<p style="max-width:800px;margin:auto;text-align:center;">
-Jsem specialista na hloubkové čištění s důrazem na detail a kvalitu.
-Každou zakázku řeším individuálně a mým cílem je maximální spokojenost zákazníka.
-Pracuji s profesionální technikou a ověřenými postupy, díky kterým dosahuji
-viditelných výsledků už po prvním čištění.
+<p style="text-align:center;max-width:800px;margin:auto;">
+Zakládám si na kvalitě, detailu a spokojenosti zákazníků.
+Používám profesionální techniku a ověřené postupy.
 </p>
-</section>  
-</div>
 </section>
 
 <section>
 <h2>Galerie – Před / Po</h2>
 
+<div class="slider">
 <div class="slides">
 
 <div class="slide">
@@ -388,8 +349,8 @@ viditelných výsledků už po prvním čištění.
 
 <button class="prev">◀</button>
 <button class="next">▶</button>
-</div>
 
+</div>
 </section>
 
 <section class="cta-section">
@@ -397,12 +358,12 @@ viditelných výsledků už po prvním čištění.
 <a href="tel:737966100" class="btn">Nezávazně poptat čištění</a>
 </section>
 
-<section class="pricing">
-<h2>Ceník</h2>
-<img src="images/cenik-canva.jpg" style="width:100%;">
+<section class="pricing" id="cenik">
+<h2>Ceník služeb</h2>
+<img src="images/cenik-canva.jpg.png" style="width:100%;">
 </section>
 
-<section>
+<section id="kontakt">
 <h2>Kontakt</h2>
 
 <form action="https://formspree.io/f/meelrnke" method="POST">
@@ -415,7 +376,7 @@ viditelných výsledků už po prvním čištění.
 </section>
 
 <footer>
-© 2024 cistenijedlicka.cz | @_cisteni_jedlicka_ | Poděbrady & Kolín
+© 2026 cistenijedlicka.cz | Poděbrady & Kolín
 </footer>
 
 <script>
