@@ -99,7 +99,6 @@ color:var(--primary-dark);
 
 /* BUBLINY */
 
-
 .bubbles span{
 position:absolute;
 bottom:-80px;
@@ -299,6 +298,292 @@ grid-template-columns:repeat(3,1fr);
 }
 }
 
+
+/* ========================================================= */
+/*                 15% SLEVA - POPUP                         */
+/* ========================================================= */
+
+.discount-overlay{
+position:fixed;
+inset:0;
+background:rgba(8,25,45,0.68);
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+z-index:9999;
+backdrop-filter:blur(5px);
+-webkit-backdrop-filter:blur(5px);
+}
+
+.discount-overlay.show{
+display:flex;
+animation:discountFadeIn 0.35s ease forwards;
+}
+
+.discount-popup{
+position:relative;
+width:min(560px,100%);
+background:white;
+border-radius:24px;
+box-shadow:0 25px 80px rgba(0,0,0,0.30);
+overflow:hidden;
+text-align:center;
+animation:discountPopupIn 0.45s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.discount-top{
+position:relative;
+padding:34px 30px 25px;
+background:linear-gradient(145deg,var(--primary-dark),var(--primary),var(--primary-light));
+color:white;
+overflow:hidden;
+}
+
+.discount-top::before,
+.discount-top::after{
+content:"";
+position:absolute;
+border-radius:50%;
+background:rgba(255,255,255,0.14);
+}
+
+.discount-top::before{
+width:130px;
+height:130px;
+right:-45px;
+top:-45px;
+}
+
+.discount-top::after{
+width:75px;
+height:75px;
+left:-25px;
+bottom:-30px;
+}
+
+.discount-small{
+position:relative;
+z-index:2;
+font-size:14px;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+margin-bottom:2px;
+}
+
+.discount-percent{
+position:relative;
+z-index:2;
+font-family:'Poppins',sans-serif;
+font-size:76px;
+line-height:0.95;
+font-weight:800;
+margin:5px 0;
+text-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+.discount-title{
+position:relative;
+z-index:2;
+font-family:'Poppins',sans-serif;
+font-size:25px;
+font-weight:700;
+}
+
+.discount-close{
+position:absolute;
+z-index:10;
+right:14px;
+top:12px;
+width:38px;
+height:38px;
+border-radius:50%;
+border:none;
+background:rgba(255,255,255,0.20);
+color:white;
+font-size:25px;
+line-height:38px;
+padding:0;
+cursor:pointer;
+transition:0.25s;
+}
+
+.discount-close:hover{
+background:white;
+color:var(--primary-dark);
+transform:rotate(90deg);
+}
+
+.discount-body{
+padding:25px 30px 30px;
+}
+
+.discount-body h3{
+font-family:'Poppins',sans-serif;
+font-size:23px;
+margin:0 0 8px;
+color:#111;
+}
+
+.discount-body p{
+max-width:430px;
+margin:0 auto 18px;
+font-size:15px;
+color:#555;
+line-height:1.55;
+}
+
+.discount-form-wrapper{
+width:100%;
+height:225px;
+overflow:hidden;
+border-radius:12px;
+background:#f7faff;
+}
+
+.discount-form-wrapper iframe{
+width:100%;
+height:100%;
+border:0;
+display:block;
+background:white;
+}
+
+.discount-note{
+font-size:11px;
+color:#777;
+margin-top:14px;
+line-height:1.4;
+}
+
+.discount-direct-link{
+display:none;
+margin-top:10px;
+font-size:13px;
+color:var(--primary-dark);
+font-weight:600;
+text-decoration:none;
+}
+
+.discount-direct-link:hover{
+text-decoration:underline;
+}
+
+/* POPUP ANIMACE */
+
+@keyframes discountFadeIn{
+from{
+opacity:0;
+}
+to{
+opacity:1;
+}
+}
+
+@keyframes discountPopupIn{
+from{
+opacity:0;
+transform:translateY(30px) scale(0.94);
+}
+to{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+}
+
+
+/* ========================================================= */
+/*                     MOBILNÍ POPUP                         */
+/* ========================================================= */
+
+@media(max-width:600px){
+
+.discount-overlay{
+padding:12px;
+align-items:flex-end;
+}
+
+.discount-popup{
+width:100%;
+max-width:440px;
+border-radius:22px 22px 16px 16px;
+max-height:94vh;
+overflow-y:auto;
+}
+
+.discount-top{
+padding:25px 20px 20px;
+}
+
+.discount-percent{
+font-size:62px;
+}
+
+.discount-title{
+font-size:21px;
+}
+
+.discount-small{
+font-size:12px;
+}
+
+.discount-close{
+width:36px;
+height:36px;
+font-size:23px;
+}
+
+.discount-body{
+padding:20px 18px 22px;
+}
+
+.discount-body h3{
+font-size:20px;
+}
+
+.discount-body p{
+font-size:14px;
+margin-bottom:15px;
+}
+
+.discount-form-wrapper{
+height:230px;
+}
+
+.discount-note{
+font-size:10px;
+}
+
+}
+
+
+/* EXTRA MALÉ TELEFONY */
+
+@media(max-width:380px){
+
+.discount-top{
+padding:20px 15px 17px;
+}
+
+.discount-percent{
+font-size:52px;
+}
+
+.discount-title{
+font-size:19px;
+}
+
+.discount-body{
+padding:16px 14px 18px;
+}
+
+.discount-form-wrapper{
+height:225px;
+}
+
+}
+
 </style>
 <head>
 <meta charset="UTF-8">
@@ -456,7 +741,75 @@ Každému čištění věnuji dostatek času a pozornosti, aby byl výsledek co 
 © 2024 cistenijedlicka.cz | Středočeský kraj
 </footer>
 
+
+<!-- ======================================================= -->
+<!--              15% SLEVA - POPUP HTML                    -->
+<!-- ======================================================= -->
+
+<div class="discount-overlay" id="discountOverlay">
+
+<div class="discount-popup">
+
+<button class="discount-close" id="discountClose" aria-label="Zavřít nabídku">
+×
+</button>
+
+<div class="discount-top">
+
+<div class="discount-small">
+Speciální nabídka JEDLIČKA
+</div>
+
+<div class="discount-percent">
+15 %
+</div>
+
+<div class="discount-title">
+SLEVA NA PRVNÍ ČIŠTĚNÍ
+</div>
+
+</div>
+
+<div class="discount-body">
+
+<h3>🫧 Získejte svou slevu</h3>
+
+<p>
+Zanechte nám svůj e-mail a získejte
+<strong>15% slevu na první hloubkové čištění.</strong>
+</p>
+
+
+<div class="discount-form-wrapper">
+
+<iframe
+id="brevoDiscountForm"
+src="https://6b301930.sibforms.com/serve/MUIFAAsbb5eOCwwHc9M02DAbrbfec66egtkjiWTcSqbE7BcETvqXUJh3Ei9J_BjkaMClxxtn9w3mMCqbi-FP6wh0YSbQZDUCTIGlBjqozWt_be15ttI20Qrv2eS-4ioRADYkDzvAWpvrHIYGDwksRWf6MO2yQ2lp9W-VaTs8lXwb3zbA5YYsOFR1wCEdzvKbPlI4kJGrRlDMms-chg=="
+title="Přihlášení k odběru JEDLIČKA"
+loading="eager">
+</iframe>
+
+</div>
+
+<div class="discount-note">
+Slevu lze využít při první objednávce.
+<br>
+Po přihlášení může být potřeba potvrdit e-mail.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
 <script>
+
+/* ========================================================= */
+/*                    GALERIE                                */
+/* ========================================================= */
+
 const slides=document.querySelector('.slides');
 const slideCount=document.querySelectorAll('.slide').length;
 let currentIndex=0;
@@ -470,6 +823,199 @@ document.querySelector('.prev').addEventListener('click',()=>{
 currentIndex=(currentIndex-1+slideCount)%slideCount;
 slides.style.transform=`translateX(-${currentIndex*100}%)`;
 });
+
+
+/* ========================================================= */
+/*                 15% SLEVA - POPUP                         */
+/* ========================================================= */
+
+const discountOverlay=document.getElementById('discountOverlay');
+const discountClose=document.getElementById('discountClose');
+const brevoDiscountForm=document.getElementById('brevoDiscountForm');
+
+
+/*
+  Klíče uložené v prohlížeči.
+
+  discountClosedUntil:
+  pokud člověk popup zavře, další zobrazení až za 7 dní.
+
+  discountUsed:
+  pokud formulář odešle, popup už na tomto zařízení
+  znovu neukážeme.
+*/
+
+const discountClosedUntilKey='jedlicka_discount_closed_until';
+const discountUsedKey='jedlicka_discount_used';
+
+
+/* Kontrola, jestli už člověk nabídku využil */
+
+function discountAlreadyUsed(){
+
+return localStorage.getItem(discountUsedKey)==='true';
+
+}
+
+
+/* Kontrola, jestli byl popup nedávno zavřen */
+
+function discountRecentlyClosed(){
+
+const closedUntil=localStorage.getItem(discountClosedUntilKey);
+
+if(!closedUntil){
+return false;
+}
+
+return Date.now()<Number(closedUntil);
+
+}
+
+
+/* Otevření popupu */
+
+function openDiscountPopup(){
+
+if(discountAlreadyUsed()){
+return;
+}
+
+if(discountRecentlyClosed()){
+return;
+}
+
+discountOverlay.classList.add('show');
+
+}
+
+
+/* Zavření popupu */
+
+function closeDiscountPopup(){
+
+discountOverlay.classList.remove('show');
+
+
+/*
+  Po zavření dáme člověku 7 dní klid.
+*/
+
+const sevenDays=7*24*60*60*1000;
+
+localStorage.setItem(
+discountClosedUntilKey,
+String(Date.now()+sevenDays)
+);
+
+}
+
+
+/* Kliknutí na X */
+
+discountClose.addEventListener('click',function(){
+
+closeDiscountPopup();
+
+});
+
+
+/*
+  Kliknutí mimo samotný popup také zavře nabídku.
+*/
+
+discountOverlay.addEventListener('click',function(event){
+
+if(event.target===discountOverlay){
+
+closeDiscountPopup();
+
+}
+
+});
+
+
+/*
+  ESC na počítači.
+*/
+
+document.addEventListener('keydown',function(event){
+
+if(event.key==='Escape' && discountOverlay.classList.contains('show')){
+
+closeDiscountPopup();
+
+}
+
+});
+
+
+/*
+  Popup se objeví po 7 sekundách.
+
+  Pokud už člověk formulář použil nebo popup
+  nedávno zavřel, neuděláme nic.
+*/
+
+setTimeout(function(){
+
+openDiscountPopup();
+
+},7000);
+
+
+/*
+  BREVO
+
+  Brevo formulář je uvnitř iframe.
+
+  Kvůli bezpečnosti prohlížeče nemůžeme číst
+  obsah cizího iframe.
+
+  Sledujeme proto jeho načtení. První načtení
+  je samotný formulář. Pokud Brevo po odeslání
+  načte potvrzovací stránku, zaznamenáme druhé
+  načtení jako úspěšné použití nabídky.
+
+*/
+
+let brevoFrameLoaded=false;
+
+brevoDiscountForm.addEventListener('load',function(){
+
+if(!brevoFrameLoaded){
+
+brevoFrameLoaded=true;
+
+return;
+
+}
+
+
+/*
+  Druhé načtení iframe = Brevo přešlo
+  na další stav po odeslání.
+
+  Zapamatujeme si, že tento návštěvník
+  už nabídku použil.
+*/
+
+localStorage.setItem(discountUsedKey,'true');
+
+discountOverlay.classList.remove('show');
+
+});
+
+
+/*
+  Pokud chceš popup někdy při testování znovu zobrazit,
+  otevři konzoli prohlížeče a použij:
+
+  localStorage.removeItem('jedlicka_discount_used');
+  localStorage.removeItem('jedlicka_discount_closed_until');
+
+*/
+
 </script>
 
 </body>
